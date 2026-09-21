@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - بوابة الطالب الإلكترونية</title>
+    <link rel="stylesheet" href="./بوابة الطالب الإلكترونية_files/bootstrap.css">
+    <link rel="stylesheet" href="./بوابة الطالب الإلكترونية_files/user.css">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Tahoma', Arial, sans-serif;
+            direction: rtl;
+            margin: 0;
+            padding: 0;
+        }
+        .hed {
+            background-color: #ffffff;
+            border-bottom: 3px solid #235A5D;
+            padding: 12px 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .login-card {
+            background: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 30px 25px;
+        }
+        .login-card .header-title {
+            background-color: #235A5D;
+            color: #ffffff;
+            padding: 14px;
+            margin: -30px -25px 25px -25px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .form-control {
+            height: 40px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-shadow: none;
+        }
+        .form-control:focus {
+            border-color: #235A5D;
+            outline: none;
+            box-shadow: 0 0 5px rgba(35, 90, 93, 0.35);
+        }
+        .btn-login {
+            background-color: #235A5D;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-login:hover {
+            background-color: #D49C29;
+            color: #111;
+        }
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-size: 13px;
+            display: none;
+        }
+        .foot {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #235A5D;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 13px;
+        }
+        .foot p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header" class="hed">
+        <img class="img-responsive" src="./بوابة الطالب الإلكترونية_files/logo.png" alt="جامعة آل البيت" style="max-height: 75px;">
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <div class="login-card">
+                    <div class="header-title">
+                        تسجيل الدخول - نظام معلومات الطلبة
+                    </div>
+
+                    <div id="errorAlert" class="alert-danger text-center">
+                        الرقم الجامعي أو كلمة المرور غير صحيحة!
+                    </div>
+
+                    <form id="loginForm" onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="std_id">الرقم الجامعي:</label>
+                            <input type="text" id="std_id" class="form-control" placeholder="أدخل الرقم الجامعي" required autofocus>
+                        </div>
+                        
+                        <div class="form-group" style="margin-top: 15px;">
+                            <label for="std_pass">كلمة المرور:</label>
+                            <input type="password" id="std_pass" class="form-control" placeholder="أدخل كلمة المرور" required>
+                        </div>
+
+                        <br>
+                        <button type="submit" class="btn btn-login">
+                            دخول <span class="glyphicon glyphicon-log-in"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="foot"> 
+        <p class="copRight">Copyright © 2017 - AABU Computer Center </p>
+    </section>
+
+    <script>
+        function handleLogin(e) {
+            e.preventDefault(); // منع الإرسال الافتراضي
+
+            var user = document.getElementById('std_id').value.trim();
+            var pass = document.getElementById('std_pass').value.trim();
+            var errorBox = document.getElementById('errorAlert');
+
+            // فحص الرقم الجامعي وكلمة المرور المحددة
+            if (user === "2550906038" && pass === "mohammad123") {
+                // الانتقال مباشرة إلى صفحة البوابة الرئيسية
+                window.location.href = "بوابة الطالب الإلكترونية.html";
+            } else {
+                // إظهار رسالة الخطأ
+                errorBox.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

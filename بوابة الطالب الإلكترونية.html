@@ -1,0 +1,850 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0045)https://student.aabu.edu.jo/nreg//welcome.jsp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./بوابة الطالب الإلكترونية_files/bootstrap.css">
+        <link rel="stylesheet" href="./بوابة الطالب الإلكترونية_files/user.css">
+        <title> بوابة الطالب الإلكترونية </title>
+        <meta name="description" content="">
+        <meta name="keywords" content="al, bayt, university, Mafraq, Jordan, Students Portals">
+        <script type="text/javascript" language="javascript" src="./بوابة الطالب الإلكترونية_files/Validate.js.download"></script>
+        <script type="text/javascript" language="javascript" src="./بوابة الطالب الإلكترونية_files/LoginCheck.js.download"></script>
+        <script type="text/javascript" language="javascript" src="./بوابة الطالب الإلكترونية_files/numberonly.js.download"></script>
+        <link rel="stylesheet" type="text/css" href="./بوابة الطالب الإلكترونية_files/floatbox.css">
+        <script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/floatbox.js.download"></script>
+        <!-- New Calender -->
+        <link rel="stylesheet" type="text/css" href="./بوابة الطالب الإلكترونية_files/jscal2.css">
+        <link rel="stylesheet" type="text/css" href="./بوابة الطالب الإلكترونية_files/border-radius.css">
+        <link rel="stylesheet" type="text/css" href="./بوابة الطالب الإلكترونية_files/gold.css">
+        <script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/jscal2.js.download"></script>
+        <script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/ar.js.download"></script>
+        <script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/ajax.js.download"></script>
+        <script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/floating-1.2.js.download"></script>
+        <script src="./بوابة الطالب الإلكترونية_files/jquery-2.1.1.min.js.download" type="text/javascript"></script>
+        <script src="./بوابة الطالب الإلكترونية_files/jquery.validate.min.js.download" type="text/javascript"></script>
+        <script type="text/javascript" language="javascript" src="./بوابة الطالب الإلكترونية_files/validator-pattern.js.download"></script>
+        <script src="./بوابة الطالب الإلكترونية_files/jquery-ui.min.js.download" type="text/javascript"></script>
+        <link href="./بوابة الطالب الإلكترونية_files/uploadfile.css" rel="stylesheet" type="text/css">
+        <script src="./بوابة الطالب الإلكترونية_files/jquery.uploadfile.min.js.download" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var requestedPage = document.location.href.match(/[^\/]+$/)[0];
+                var ajaxObjects = new Array();
+                var ajaxIndex = ajaxObjects.length;
+                var res;
+                ajaxObjects[ajaxIndex] = new sack();
+                ajaxObjects[ajaxIndex].requestFile = '/nreg/loadstdmsg.jsp';
+                ajaxObjects[ajaxIndex].onCompletion = function () {
+                    res = ajaxObjects[ajaxIndex].response.trim();
+                    var response_date = res.split('^&^');
+                    if (eval(response_date[0]) > 0) {
+                        if (requestedPage === "ShowAllmsg.jsp") {
+                            $("#myModal").modal('hide');
+                        } else {
+                            var d = document.createElement('p');
+                            d.id = "new1";
+                            d.innerHTML = "<img width='10%' src='images/messages/mail__unread__message__envelope-256.png'/>  يـــــوجــــد لـــديـــك " + response_date[0] + "رســــائـــل   ";
+                            var p = document.getElementById('old');
+                            p.appendChild(d);
+                            $("#myModal").modal('show');
+                        }
+                    } else {
+                        $("#myModal").modal('hide');
+                    }
+                };
+                ajaxObjects[ajaxIndex].runAJAX();
+            });
+        </script>
+    <script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/core.js.download"></script><script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/mousedownHandler.js.download"></script><script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/resizeHandler.js.download"></script><script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/animations.js.download"></script><script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/getLeftTop.js.download"></script><script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/zoomInOut.js.download"></script><script type="text/javascript" src="./بوابة الطالب الإلكترونية_files/keydownHandler.js.download"></script></head>
+    <body dir="rtl" class="" style="">
+        <div id="content" class="content container-fluid">
+            
+
+
+   <div id="header" class="hed"><img class="img-responsive" src="./بوابة الطالب الإلكترونية_files/logo.png"></div>
+            <div></div>
+            
+
+
+
+
+    <div style="font-size: 14px;font-family: Tahoma;font-weight: bold; text-align: right;margin-bottom:10px" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<!--        <img alt=""  src="/nreg/images/leftarrow.png" align="middle"/>-->
+<img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAFAAPADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACivOP7Tvz/y/XP8A39b/ABpovr3p9uu/+/7/AONAHpNFeb/bb3/n+vP/AAIf/Gj7Zef8/wBef+BL/wCNAHpFFeb/AGu8/wCf69/8CX/xpDcXTDD3d249GuHI/U0Aek0V5p5sv/PWT/vs/wCNJvf/AJ6Sf99GgD0yivMyzf3m/Om8+p/OgD06ivLyik5Kgn1Io8qM/wAC/lQB6hRXl/kxf88k/wC+RSeRD/zyj/75FAHqNQ/a7f8A57xf99ivNPs0H/PGP/vkVJtX+6PyoA9H+2Wv/PzD/wB9im/brT/n6g/7+CvOtq/3R+VG0egoA9EOoWQ/5fLf/v6P8aa2qaegy19bD6yr/jXnuBSEUAeg/wBr6b/0ELT/AL/r/jR/bOl/9BKz/wC/6/4156RTSKAPQ/7a0r/oJ2X/AH/X/Gk/tzSP+gpZf+BCf4154RSEZoA9BPiDSAcf2hbt7pIGH5ik/wCEi0n/AJ/o/wBa89IpMUAehf8ACR6R/wA/qfkf8KT/AISXSP8An9X/AL4b/CvPcU2gD0P/AISbR/8An8/8hv8A4VGPFmin/l7b/vxJ/wDE15/im0AXAKWlxS0AGKKKWgAxRjNLRQAlGKWigBtLilxRigBtLilxRigBKKWigBKKWigAoxRRQAlGKWlxQAwimkVJikI4oAiIpDTjSGgBlIadSUANxTaeRSYoAYRSEU4ikIoAu4pKUUtABiiilFACUtFFABRRRQAYpKWigAxSUMwRSzEBR1Y9BXEeI/iJaaTcG2sQLuUH5mVgFXB6Zwcg+1AHZXF1b2ib7ieKFO7SOFGPxrKk8W6DGSx1az2qpYkSg8DHp9ePWvENX17UtdvGnuriSU+gAAUegArLYGNisnDDt60Ae7w/EHwzKX3aj5IXOPMjPzjA5G3OOvfB46U8+PfC+1yNWjyvGNj8/Tjn8K8E3tg8HAHemljxzQI+k7TV7C9cJb3UMshXeERgSV454+o/OrqkEZFfMtpfXFjcCe2mkimTo6HBH5V2ml/FLWrKMR3kUF+i4wWXy3AA6ZUY/Eg0DPZ6K5bQfHml66Vh2yW12VLGJ8EdegbjJ711CsGUMpyDyDQA6mnpS00mgBpplPNNNADaSloNADaSnYoxQAzFJT8ZoxQBYpaSnCgAopKdQAYooooAKKKKADFIeBS1xnj/AMXx6FYPp1o+7U7hMfI3Nupx8x9z2+mfqAc/8QPGMOLvRrBnaQ7RLKDxGR95F75PAPTvXmqDJQuQQW5XPUdaQsWkY8sWOSTyasW0LOCADJu/hHPPvQCQwS7I2YDcd2D7D/8AXjn6UI8bJhs78HLep7AenPWtW10eeTBaEBB3H+P+NbCaDZbQWilBxnAGf8+1ZyqxRrGlJnI7/MAeQHPALMcjIB7enSmoIwz/ADPg/KOMnH6e9do+g2cMRklBZWAVUUfMTyOPXqTUM+g2k24xPs3AHIUHHtn65/Kl7aI/YyOPMP7pNuSWDErkdqPJw395yDhe38/TnNb8/h7ORHcK7JwxfoO/pWXNYXcYwFDIo6KBjGc/zq1NMh05IqQyFJlcbgynIIPI+lejeEPiFLbM1prVw88R5Sd8l09icZI+tedsF6eSeOWbB4FO3bTuHC9Qd2ce3Gf1qyD6RtLyG+t0ngbdGwyDUxrxTwt41udClWFgJbF2+eM5yp4GVP0HSvZba5hvIFngkWSJuVZTkEYz/WkBIaQ0tIaAG0lLSUAJRS0UAGKQ0tNNAFmlFJSigApaBRQAtJSiigBKKWgDnigDF8T67H4f0Ga8LL5zfu4EJwWkPT8upr5+uLia9upp53aWeZ97uepJ611fxC15tX8RPbIf9HsnMSD1ccM30z/KqelaP8okkXJYZGewpSkkVCLkzPsdJlmOWU89gK62w0dYwCRg1csbNF/wrbgt8AZ9OtcNWs3oj0KVCK3KsNkoHA/GpmslKMCuQe2K1IrcY9KkaAYArC7OiyMRNJhX5ipJHHzsW49gTQbBQ5O0YIA24H54/L/JraaEgcVFtIJ45o5mLlRiTacrMXCjJGOagl0wNGFGcAfnXRCAHnA/OkaIEHAp8zDlR55qugAr5irz3GT/ACrm7i3lgO1oht9hnt/ntXq1zbBwTg5BrnL/AE5XJ+QAnvXTSrPZnLVoJ6o4ZVA453+1dz4H8VPpsQ050/cGQyM7ZIQEAYAHvzXK39ibdmfA4GelVoJJoXVoH2OQV4OCAetdid1c4WmnZn0VFIs0Sup4YA/TIzSmsLwtdPc6XE9xcCW4ZBvAI+TkgDHbgVvUCGUGlNJQAlJS0lABmkNKaQ0AWaWkpaAFFFFFACiiiigArL8Ral/ZHh++v94QwxEoScZfoo/PFalcJ8WLsReGLe1ycz3Kkgeignn8cUAeUWCtdXoaQlnY5Yn+f1ru7aMBFXGMfpXI+HU/fM59K7S1UEAsM1y15HXh4l+3X06VqWyg/wD1zWfAD+PpWjAkmOAtcbO5F1COwBqTOSOPypkcZz3x9BVlYs470hPQRUDdSB/n2pjxpnORzVtY+B701osgkDpzVcolIzW6HBHtimEgjk81ceA5PSqssR6FeTSKKUpByayrqMMMgVqzxlVJFZ0gJyDTjuJrQ53UIAyHPeuQuoTbzYJ6HjNd3dpnK+tcrrEfltuIHtXdRlpY4K8ep6b8O3SXw+JI0C/OQ3A6jjr9K7CvPvhTLv02/iIP7qVTnPUMP/rH869ANbnMNpKdSUAIaSlNNoADTacaSgCzS0lLQAtFFFAC0tJS0AFeb/GFSdM0kgDaJ5AfxUY/ka9Jrzr4v7v7E0wgfL9rOf8Avg//AF6YHB+Hl3MTxhetdhaHP1rmvD0Hlad5h+9IxP4dq6OydUjZmbCryxJxgfWuKrqzuo6JGzAmTz0rTspEOFOPfFefar4vjRDHYndzgyE4/wC+R1P1rKj8XamwAto4wM9W+Y59+1TGhJ6sqWIinZHtESK5yOlWBH0zxjrntXjK+ONXiIKSx7uwCjGBxyO3T/Oa6Xw741nvZFW4ykw+WRT0Yev69OuPWqdGyJVdSeh6RtxESe3rTNuQeM4GetV/t6GAOpGMdPUfSoGvi0e6Bh/u9D6VNkXdlpogckEcHH41TkkjXP161yWu+LprNGEeTJIPkz0OM5J/l/wGuVfxtqrhVXyVb+66+3Unj8qpUr7EOso7no00sUinGMnsKzJl7jv3rz1/FmqRyksqAEglSDz79uO45z7+ujp/jFmyt1D0OMxjvz/nH5elEqEkOOIi2bF6QG9K5rXEzDG2fzrfvZ454I54mDRuNysO9YOtE/ZY2xwHGfyNVSViKzujofhO5GoalFnhoUYD1wx5/WvUq8p+FC51jUePuwD9Wr1Y8V1HGJTTTjSGgBKbS0lABSGlNIaALNLTaWgBwopKWgBaWkp1MArhviuu7wjFxyLxD0/2WrugM1y3xFtRceDrsnGYikgPp8wH8iaAPO9MGzS7cY/gFZesX8ty/wBgtg4iU/vWH8R9B7D1rcsYj9hiAycRjgfSmWukx5Zpg4G7c2Wxk/QVyJpNtnW03FJGZpXhd9QcNMjxQ9FHQkevQV1i+DNNEWJpT0xhpMZ/Cs7+3ALuPT7C2e5uW4SCHCgf757Csefxdrkd1Laq1jb7N5b5V/hz/Eep44A68etV+8ltoL93HfU6pfBmlHiNgT0yrf4U6Lw/FaXMcg+Yocq+ecelZuk3us3+lHVZrJJbZHCNJb5WROAd208kYPb8q6KG7EtqjrIJF6hh+WCOxrKbnHdm0I05K6NqOITQr8v3SDjPpUb2/lJKd3DOWwe2Tk1Ha3WFOe3P1qPUrwiI4PbNZqRfIYb6Kl9cs5HQYB9BUT+B9KJZ5GUEjAy2FHv7n61pw3CxWMk7SBQBkk9AKxNZn1ez0r+1IoljQzeUjTLukY4JyF6KOPWtIOb2InGEdWWf+EN054gv24SsBhQJMnrnHWuW1jwjLp5L287vjjb5Y4H8z+VV4vFWuzSiBb63n81RjMQIXJ+gIPNbY1u6s77+z9UtRbTAcDO6OX/dPb2/Wtvfj5nP+7ltoc9pdzPbt9jmX925O0n+FvT8au6kgfTX9QQfpzWleWSAiSJFdGYOvGCvf1qrqCY064I/u7sfjQnd3BxaTRr/AArh/wCJjqM2PuxRpnHqWOP0/SvUDXnXwviKWt3OwP72QAH1AH+Oa9FNbnONpKU0lACUhooNACUlKaSgCyKWm0tMB1KKbS0AOpwpgpQaAINT1CLStMnvplZkhAJVepyQB+pHNcdq3iZdU8PX8Fxbqkc9s4jlibeAcHbkY9cciu1uoxPZ3EJXO+NlwfpXmGoWzWs0ywrut5Iw0ij+Atnke3rWNWUotWN6UIyi7jLSFfLSMjjAHH5VbvbORrRkhIQkYyRnFNscLknr0zWtFiUYxxXK27nVFaHH6K0+g3EzJbCQH78mcO2fX/IpdR0fT9a1BbpYbi1aVsyRsoIJ7lT2zz6128emwy8sgNXVsoIwDsG4Hg1oqjJ9lEydKNxa6XHp0BNtbqMviMMZCRyWZsY9OB2quYolnlaEkhm5OANxzyeMD8uK1riMyAoowKzplEbbF6YrOc29zSMFHYltlJYc4NT6hBut2OTwOMiq9tJmXjpV+5kEkPUCs1ubLY5y3SOeI2s5OxH3cHGfQ/hWrqC3E+lz2ckjXlrIARHIgYhsg5DAgjH4/SscYi1DB4z+oroLY+UQp5Ruh9K1jLlZk4KWjOMs9HsdJ1J5lspbho3PlhpAqkjJBPy5PAz0HSo9cN5rcojmtYogDxg7yp9j2+teiPbRyAnaDz6VQmsYlJOATWntJGfsonOafaSiySKch2QYDDuKo6pAVsrhPVGx+VdJKgjGBx9Kx78CSM5xhhg/jUReopxVi94Vu4NH0yCJo5pGxlvLUcE8nk4rt7S9gvrZZ4GJUnBDDBU+hFefFZNQEKDMdm7hCRwZPXn0/nXYeHbRLLTXjiQKjTMwA+gH8wa3pzcnqYVaUYxujXNJRSVsc4UGg0hoASkPSikpgWc0tNpc0AOBpaaDS5oAdmikooAeDyK4m+tjHd6ghHAOwfTbkfzrtCSFJAya5HUdQa3u7veu0uQR/wB8gf0rGutEzfD/ABNeRz9m2QvP/wBetmxQoGy+8sd3PbtgVz9nIN+3sDW/bFcD1rkludlPVG1CF4ODuA6kVIxyMYqCJiRk8jFWlXcM1NzSxB5fy4AzXP6nL5V2IFG6TG5sdh2rrCgWMsccVyVmyTyTXsxADsWJPQD0/AUWFcs2Fq2zLfe6mtVrRhETjjscVzlr4p0m51AWtreI7+mCAfoeh/CuluNZjWwCl0Crk54B/E0+TuNTXQ5TV4ja3Uc/8IbDY9K6GCMqiq3IOPxrGGqabrAkihuoJZV6qrg1uaK32jSgrH54WMWT1IHT9MU2mTzK9ySIjb8rbkxwRzTpVynHNPK4OPWomfaD159ulJMpoybsDB+tc/enAK+vAroL5uD6Vzl0489MnA3D+dXDcxqnRsoEVnsj4SRAqqPXgCuqgi8mCOLjKjBx69/1rmJ9WtrRrWV1BUShsL344/XFdJa3SXcQkTjPauiit2c+JeqiTmkooNbnMJSUUGgBKQ0UhNAE9LTaWgB2aUGm0tADs0tJmigCRe9cT4l/c6jBPjOCVI9Qa7PNcz4qiU23mYGUYNUzV4tFQdpJnGs3l37/AMIJzit61fcFOfwrn75kadJUYHKitSxl3KvOM1wzWlzvpvWx0cEmeABx61oKw6VjW8uACQTzirpuVjUkkA9qzsbXLVzPhSAQK5O506aJ5UieN7eRsmGQdM89fT2xWncaivZjknp61Sa4edwqDch5JB/z2pptE6EL2KakG3RwxyIA3yKOvaqt3ojzxj7SGkgBHybsDPuO/wCNa6xzxxbtu5e6gdOc1LM7zSS7IT5LN8p+70rRSJcXfYxhaRoiJYaVFEUHDsduPfjmt/SUNjbLCzb3LF2bGMknmsr7S8MgDbhnAIPbn0qaDUo2wC2DUttjVupvSOOowR7VUmk4J6cVCtzuBB7ZqKSXA5PPIqS7lO9kznjrXOySg6hEMZ+fpWrez4QnNZNkEa4lllIwiEjPqf8AJraG1znqPWwl5HK+o28BJPO4Dso//XXpWkxGKzXPpXAeHrf+0NWe4ZiVU4XPpXpcSCONVHYV1QVkcc3eQ+koNJVmYUlFITQMDSZopKAJqXNNBpaAHUoNNpc0AOoptLmgB+axtftzPZOB3U1r5qtfDfbMPagR48MxTPG30rXspgF4NZ2rIYdSlHQ7sii0mAfBxg9K5qsbo6aMrM623m+78w9Kg1C7dHO1egJOaq2dxj73rxV9yjH5sEGubZnY3dHPS3Ch/Nn80jPbvU8WtIABnykHPTGa0rqLG0KBgEOD6GoomgKhJBtxge+B2q04y3LpwsImu2TD93PGHPIAkHP69alfVYHLEzjA9GHSrUVnYSKFaVTnqrp1/OorjTdMiyS0eR2EYyf04/8ArUcqOmyMu51iEIQZA6e/UH1FZ/2nzZGktmYqfXpmtSYQEBI414zhtvPTFWLW2QxABFUA5Jx9407qKOarC4zT71pZtpz0BA/Cr00vXJzVeOCKKd5Rx7DjJ9aguLng4NS9XoZK6WpT1CbIwMZJx+FYFw+6UgE4Awfer15cA7mPIHT3rNhUyzKOSWaumEbI5Ksrs73wXZssCuR15rtjWP4fg8qzX5cYArXrcwYUlFJQIKSjtSUAFJRSUDJc0tNzSg0APzRTc0uaAHZpAeT60hbjgZpaAHZpsib0K+tLmjNAjz3xPoFz5xuYYy47gVyRZrdiHymOTnjFez3aeZAw9q8X8clYNQa2VsM6b3A7DtUyjcpOxpWd5kAda1FusgDPFcHYXcltb27P9xlxurp7S6WYAq2RXLUhY7Kc7qxtpdbvlZvwNJNCZB8jbSe4qokZZweoIzWlbRjGWbIHvWL01RvHUyntdQ3fJeRj0zHn9c0LY6huBe6Q+uI8f1rpFkijUHYvHr3pPtCS5BCjHtijmZpd9zGjgZPv81Ye42JjOamnjOGIP51nyIQM7uKFqZyY2S6JXAxWbdXHyn5hz1ovLuOFTluB61zk93LqMjBCVgH3j6+1bwj1Oec7Fe41p5NSKqAbdPlx3PvXYeGdMlvblLhYyYsZVscGvN1I8xj6sa9l+F1wbjw9LG3Jtp2QH/ZIDD+ZrpSOS7O1tovJgVPSpaM0maokM0lFJQAUlFJQMKSikPNAD80Zpuc0oNAD84pc0ylBoAdmlBpuaAevoBkn0oAfmjNc5qHjrw5prMkupJLIvVLdTIc+mRx+tcBr/wATtSv3MOkA2Nv08zgyt+PRfw596APRvFHiaz8M6eJbhfNuJciC3BwXPqfRR3NeG6vqFzrOoTXk+zzpmAIQYUDAAAHpioLi6nupWnuZ5Z5T1klcsx/E1EkpEmQcHPFIDf06BZLBYXG4YINRkXGlSbvmeD17r9asaO2Y0I5rce3WVORkGuWUrSOtRvFNCaXqUU6j5uCM4zWus4VdrdD37Vxd3o9xaSG408n1Mfr9Kji8SzwHyrmJ1cHn1qXT5tUUqnLpI9AVwYxhsjt3pCxUgjkjggCuOj8WwqMM2eOhUill8YQYyuc+wNL2Ui/bROta5wjFucdqw9T1WOBWJYDFc7N4ju71vKtIJHY8DA5oi0ieWQS6i+W6iIHgfWrjBR1kZyqOXwkLNPq0uclbcHr3arssK29qQq4AGBWjHAqAAL9AKpX/ABGR1qua7J5bLU5uS2wnmL26iun8E+LG8N6g0U/zafcsBOMcoRwHH0zyO4rCuCI7UDu/H4CqQNbRd0c8lZn0tHIk0SywuskTDKuhypHsadXznYatf6VL52n3k1s/fy3IB+o6H8a73Q/iqwKw65bBh0+024wfqyf4flVEnpxNJVXT9UsdWg87T7uK4Tv5bcj6jqPxqyTg0wA0lFNoAXNJmkpKAHUoNMBoaRI42kkdURRlmYgAD3JoAkpk9xBawtNcTRwxL1eVwqj8TXFa58StO0/dDpaC+uBx5mdsSn69W/Dj3rzHWNc1DXbr7RqFw0zD7qdEQeir0FAHrGrfEnQ9PjYWbvqE/ZYgVTPux7fTNeba74x1nX90dzc+Vak/8e8Hyp+PdvxNc+fajFIA6Uqnmm8DqaAcnpQA/OaaeDS0hNAGpo98Le5CucRvxn0Ndxbnco9xXmat9ea6rw7rIBWzuG56Rse/t9awrQvqjoo1Le6zqJLcEccE9uxqlNbQuds9ujgdQ6Bq1EKsgGDTZYMjj5h71zp2Olq5lR6Jos33rGPPsSP61bXw5oyYIsYj9cn+tNkVkPP5EVG126jaKq77k2j2JZvs9qhjgijjX0QAfyrPVGlcnkD171Pskk6ggH0/xqZIQq9Rj2o2AhcBF6YGKxr07wwFat23GBXM6tdbc26H5jy5HYelXTV2RUdkZlzL5j8dMYH0qLOKQnJoHNdRxt3FPTNJuHpilPCUzrQBNFO8MgkhkaOQdGRirD8RzXYaD8RtV06RY9Qdr+06Hf8A61fo3f6H9K4nPrSgn1oA960vxhoWsMsdvfKkzdIpx5bE+gzwfwNbh4ODXzVuPtXd+E/iFJpyrY6wZJrQcRz/AHniHof7y/qPei4HrFJUVtd299apc2kyTwOPlkQ5B/w+lSZpgcZr3xF0/TS0GnKL65HBYHESn6/xfh+deb6z4i1TXZN1/dM6ZysK/LGv0X/HmsndSZpAOJpu4U2igB2SfQUh9yTSUvWgBKWkxiloAk64pjDFKhyMUpoAZinK2D7UjLSUAdp4e8RiRktL58SdElP8Xsff+ddWcMM8ZryIHjB6V1Oh+KWtVW21BmeHok3Vk9m9R+v1rnqUusTppVukjrJWK9uKg357fjV0BLiJZYmV0YZV1OQR9aYtoWboawRuVgmaJRhRzjFakdkFHT8qy9au7XS7YyTkFsfJEDyx9P8A69C1dgukrmBq98tlHxhpWzsU/wAz7VyLuxYliSxOSfU1Jd3cl3cPPKQXb06Aeg9qr9TXZCPKjiqT5mAzmnigDvS1ZA1z8v402nsegptACUvSjpSE0AFL3pM0HmgDR0nWtQ0S68/T7lomP3l6o49CvQ16f4c+IFlqxW21EJZXh4BJ/dSH2J6H2P514/Ts0ANPSivrb/hSnw+/6AB/8Dbj/wCOVJH8G/AMWNvh9D/vXMzfzegD5Eor7ET4VeBkGB4ctD9Sx/mad/wq3wP/ANC3Zfkf8aAPjmlr7F/4VZ4H/wChbsv++T/jQPhb4HBz/wAI1Y/98n/GgD456UvavsyP4ceC4/u+GNLP+9bK38xVgeBPCAGP+EV0T/wXxf8AxNAHxWODmpBX2h/wgvhD/oVdD/8ABfF/8TR/wgnhD/oVdD/8F0P/AMTQB8X03FfaieCPCcZynhfRVP8As2EQ/wDZasp4Y0CL/V6Jpqf7tpGP6UAfENKDjuK+4v7B0f8A6BVj/wCA6f4Uf2Do/wD0CrH/AMB0/wAKAPizTNZu9JlL2k4VSctG3KN9R/Uc11J+Isa2y+XpY+0990uU+vAz/nrX1V/YOj/9Aqx/8B0/wqWPStOi/wBXYWqf7sKj+lTKEZbotTktj5KPxFu2s3T7FbLdFvlkBOxRj+6Scn8ce1cld3s15cPcXExlmc5Z2PNfdSRJGMIiqP8AZGKfQoqOwpTctz4KyO7D86cpXoGBP1r7zoqiT4VS0uZf9XbzP/uoT/Spxo+qEZGm3h9/Ib/CvuOigD4bOi6rn/kGXv8A4Dv/AIU3+xdV/wCgXff+A7/4V9zUUAfDa6FrEhwmk37H2tnP9KsR+EfEsv8Aq/Dmrv8A7tjKf/Za+3KKAPin/hCPFv8A0K2uf+C6b/4mg+CPFo/5lbXP/BdN/wDE19rUUAfFH/CE+Lf+hW1z/wAF03/xNSx+AvGEmNvhfWB/vWUi/wAxX2lRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//2Q==" style="display: inline-block;width: 60px;height: 60px;
+                 border-radius: 50%;background-repeat: no-repeat;
+                 background-position: center center;background-size: cover;">
+        <span>محمد عبدالحميد حابس البطاينه</span>
+        <img alt="" src="./بوابة الطالب الإلكترونية_files/leftarrow.png" align="middle">
+        <span>كلية الامير الحسين بن عبدالله لتكنولوجيا المعلومات</span>
+        <span style="float: left !important"><a class="btn btn-warning" style="text-decoration: none;background-color: #235A5D;color: #EA8F15" href="https://student.aabu.edu.jo/nreg/SignOut"><strong>تسجيل الخروج  <span class="glyphicon glyphicon-log-out"></span></strong></a>
+        </span>
+    </div>
+
+            
+
+
+ 
+    <!--    <nav class="navbar navbar-default" role="navigation">-->
+    <nav class="navbar navbar-default col-lg-2 col-md-3 col-sm-3 ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-toggle collapsed" style="text-decoration: none" href="https://student.aabu.edu.jo/nreg/SignOut"><strong>خروج <span class="glyphicon glyphicon-log-out"></span></strong></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    
+                        <li class="active" role="presentation"><a href="https://student.aabu.edu.jo/nreg/welcome.jsp">الصفحة الرئيسية</a></li>
+                        
+                        
+                            
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\برنامج طالب.html">  البرنامج الدراسي&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\الوضع الاكاديمي.html">  الوضع الاكاديمي&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\الوضع المالي.html">   الوضع المالي&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\معلومات البريد الالكتروني.html">   البريد الالكتروني&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\مواعيد التسجيل.html">  موعد التسجيل&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\جدول الامتحانات النهائية.html">  مواعيد الامتحانات النهائية&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\الوصل المالي.html">  عرض الايصالات المالية&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\نتائج امتحانات المستوى.html">  نتائج امتحانات المستوي&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\تعديل كلمه سر البريد الإلكتروني.html">  تعديل كلمة السر&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\صندوق الوارد.html">  الرسائل القصيرة&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\تعديل كلمه سر البريد الإلكتروني.html">  تعديل كلمة السر للبريد الالكتروني&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\تعديل العنوان.html">  تحديث بيانات العنوان والهاتف&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\العقوبات.html">  العقوبات&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\اسقاط المواد.html">  اسقاط المواد&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\الخطه الدراسية.html">  الخطة الدراسية&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  خدمة تفعيل الهاتف&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  طلب وثائق&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  براءة ذمة الطالب&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  تقديم طلب مراجعة علامة&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  تقديم طلب لعذر غير مكتمل&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  طلب تحويل من تخصص اعلى لادنى&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  ابداء ملاحظة/شكوى&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  طلب معادلة مساقات&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  حالة الطالب لغاية التأمين الصحي&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  تأجيل فصل دراسي / دراسات عليا&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  حاسبة الرســـوم&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  احتساب مواد بكالوريوس&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  خدمة المجتمع&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  نقل مستحقات مالية&nbsp;</a></li>
+                                
+                            
+                                
+                                <li role="presentation"> <a href="c:\Users\moham\OneDrive\Desktop\New folder (2)\طلب تحويل من تخصص اعلى الى تخصص أدنى.html">  طلب احتساب المساقات السابقة على الرقم ال&nbsp;</a></li>
+                                
+                            
+                        
+                    <li role="presentation"><a href="https://student.aabu.edu.jo/nreg/SignOut">تسجيل خروج</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+            
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 ">
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<style>
+    .btn:hover
+    {
+        background-image:none !important;
+        background-color:#D49C29 !important;
+        color: #000 !important;
+    }
+    .btn{
+        background-color: #167373 !important;
+        color: #F8EA7C !important; 
+    }
+
+    .glyphicon{color:#0c0 ;
+               font-size: 14px !important;}
+    .newbtn{
+        background-color:  transparent !important;
+        color: gold !important;
+        border: none !important;
+    }
+    /*    body{
+        margin-top:20px;
+        color: #1a202c;
+        text-align: left;
+        background-color: #e2e8f0;    
+    }*/
+    .main-body {
+        padding: 15px;
+        background-color: #E2E8F0;
+    }
+    .card {
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1rem;
+    }
+
+    .gutters-sm {
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+
+    .gutters-sm>.col, .gutters-sm>[class*=col-] {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+    .mb-3, .my-3 {
+        margin-bottom: 1rem!important;
+    }
+
+    .bg-gray-300 {
+        background-color: #e2e8f0;
+    }
+    .h-100 {
+        height: 100%!important;
+    }
+    .shadow-none {
+        box-shadow: none!important;
+    }
+    .responsive-width {
+        font-size: 3vw;
+    }
+</style>
+
+<!--<div class="container">-->
+<div class="main-body">
+    <!-- /Breadcrumb -->
+
+    <div style="width: 100%; height: 60px; background-color: #FF0;  margin: auto; text-align: center">
+        <span style=" display: table-cell; vertical-align: middle; ">
+            <a href="https://exam.aabu.edu.jo/onlineexams/list_dates.jsp">
+                <h3>للإستفسار عن مواعيد امتحانات المستوى للطلبة الجدد انقر هنا</h3></a>
+        </span>
+    </div>
+      <br>
+    <div class="row  gutters-sm ">
+        
+           
+        <div class="col-lg-1" style="background-color: white ;  "><h4>    &nbsp;</h4></div>
+       <div class="col-lg-4" style="background-color: #449d44;  
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
+    "><h4>
+            
+            عدد الفصول الدراسية 
+        3  من اصل 
+        
+        14
+        </h4></div>
+        <!------------------------------------>
+        <div class="col-lg-1" style="background-color: white ;  "><h4>    &nbsp;</h4></div>
+        <div class="col-lg-4" style="background-color: #449d44;  
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.2);
+ "><h4>
+            
+            عدد الفصول المؤجله 
+        0  من اصل 
+       
+        4
+        </h4></div>
+       <div class="col-lg-2" style="background-color: white ;  "><h4>    &nbsp;</h4></div>
+        
+    </div>
+   <br>
+    
+    
+    <div class="row gutters-sm">
+      
+        <div class="col-md-4 mb-3">
+            
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-column align-items-center text-center">
+                        <img src="data:image/jpg;base64,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" class="rounded-circle" width="150" style="display: inline-block;background-repeat: no-repeat;
+                             background-position: center center;background-size: cover;">
+                        <div class="mt-3">
+                            <h4>MOHAMMAD ABDEL-HAMEED HABES AL-BATAINEH</h4>
+                            <!--                                    <p class="text-secondary mb-1">Full Stack Developer</p>
+                                                                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                                                <button class="btn btn-primary">Follow</button>
+                                                                <button class="btn btn-outline-primary">Message</button>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ourModal1" style="display: block;margin-right: 20%;"> حركات تعديل كلمة السر
+                        </button>                                                </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ourModal" style="display: block; width: 50%;margin-right: 20%;">  حركات الدخول
+                        </button>                                            
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a target="_blank" class="btn btn-primary" style="display: block; width: 50%;margin-right: 20%;" href="https://student.aabu.edu.jo/nreg/dalel2025-2026.pdf"> دليل  مودل</a>
+                       
+                    </div>
+                </div>
+                <hr>
+                 <div class="row">
+                    <div class="col-sm-12">
+                        <a target="_blank" class="btn btn-primary" style="display: block; width: 50%;margin-right: 20%;" href="https://aabu-coe.app.deepknowledge.io/home"> قواعد البيانات العالمية   </a>
+                         
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <fieldset>
+                        <legend>بيانات الطالب  : </legend>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="col-sm-6">
+                                    <label>الرقم الوطني : 2001298529</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label> </label>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="col-sm-6">
+                                    <label>تاريخ الميلاد :30/08/2006</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>الجنسية :الاردن </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="col-sm-6">
+                                    <label>مكان الميلاد عربي : اربد</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>مكان الميلاد انجليزي: IRBID</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">
+                                <i class="glyphicon glyphicon-user"></i>
+                                الإسم باللغة الإنجليزية
+                                :</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            MOHAMMAD ABDEL-HAMEED HABES AL-BATAINEH
+                            <a class="btn btn-default btn-lg newbtn" href="https://student.aabu.edu.jo/nreg/StdEngName_first.jsp">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                البريد الإلكتروني : 
+                            </h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                              
+                            2550906038@st.aabu.edu.jo
+                            <a class="btn btn-default btn-lg newbtn" href="https://student.aabu.edu.jo/nreg/StudentEmail.jsp">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </a>
+                            
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h6 class="mb-0">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                كلمة سر البريد الإلكتروني 
+                            </h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                            <div class="input-group-prepend">
+                                  
+                                <div class="col-sm-5 text-secondary">
+                                    <input type="password" readonly="true" value="Ekft8949" id="myInput" class="form-control">
+                                </div>
+                                <div class="col-sm-4 text-secondary">
+                                    <button class="btn btn-default btn-lg newbtn" onclick="myFunction()">
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                    </button>
+                                    <a class="btn btn-default btn-lg newbtn" href="https://student.aabu.edu.jo/nreg/new_email.jsp">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">
+                            <i class="glyphicon glyphicon-earphone"></i>
+                            رقم الهاتف الفعال
+                        </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                          
+                        0780959469
+                        
+                        <a class="btn btn-default btn-lg newbtn" href="https://student.aabu.edu.jo/nreg/stdPhone.jsp">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            جهة الإنفاق : 
+                        </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                          
+                        ابناء المصابين العسكريين (جسيم)
+                        
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                         حالة الطالب :
+                        </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                          
+                        منتظم
+                        
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">
+                            <i class="glyphicon glyphicon-home"></i>
+                            العنوان : 
+                        </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        حكما
+                        <a class="btn btn-default btn-lg newbtn" href="https://student.aabu.edu.jo/nreg/ChangeAddr.jsp">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">
+                            <i class="glyphicon glyphicon-lock"></i>
+                            كلمة مرور النطاق (Domain):  
+                        </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        <div class="input-group-prepend">
+                              
+                            <div class="col-sm-5 text-secondary">
+                                <input type="password" readonly="true" value="Q$301bdy" id="myInput2" class="form-control">
+                            </div>
+                            <div class="col-sm-4 text-secondary">
+                                <button class="btn btn-default btn-lg newbtn" onclick="myFunction2()">
+                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <!--                    //////////////-->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    
+        <div id="firefont_eff" style="font-size: 24px;text-align: center;font-family: PT Bold Heading">
+
+        </div>
+
+    
+    
+
+
+<div class="modal fade" id="ourModal" data-backdrop="static" data-keyboard="false" dir="rtl">
+    <div class="modal-dialog" style="width:50%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                <h3 class="modal-title" style="text-align: center; font-weight: bold">سجل الدخول للنظام </h3>
+            </div>
+            <div class="modal-body" style="">
+                نود إعلامكم بأن أخر 10 حركات تسجيل دخول لحسابكم هي حسب التالي 
+                <div class="table-responsive">
+                    <table id="transTable" dir="rtl" class="table" border="1">
+                        
+                        <tbody><tr style="background-color: #117878 ; text-align: center; color: #CCCCCC">
+                            <th>
+                                وقت الدخول
+                            </th>
+                            <th>
+                                المكان
+                            </th>
+                            <th>
+                                نجاح/فشل عملية الدخول
+                            </th>
+                        </tr>
+
+                        
+                    </tbody></table>
+                    
+                </div>
+                <div class="modal-footer" style="float: contour">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #117878 ; color: #CCCCCC">إغلاق </button>
+                </div>  <!-- model footer -->
+            </div>  <!-- model body  -->
+        </div> <!-- model content  -->
+    </div> <!-- model dialog  -->
+</div> <!-- model  -->
+
+<div class="modal fade" id="overlay" data-backdrop="static" data-keyboard="false" dir="rtl">
+    <div class="modal-dialog" style="width:50%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                <h3 class="modal-title" style="text-align: center; font-weight: bold">سجل تعديل كلمة المرور </h3>
+            </div>
+            <div class="modal-body" style="">
+
+                نود إعلامكم بأنه قد تم التعديل على كلمة المرور الخاصة بحسابكم حسب الجدول أدناه في حال لم يتم التعديل بناءً على طلب منكم يرجى تعديل كلمة المرور و إبلاغ مركز الحاسوب فوراً
+                <div class="table-responsive">
+                    
+                            
+                            تاريخ التعديل
+                            <table id="transTable" dir="rtl" class="table" border="1">
+                        
+                        <tbody><tr style="background-color: #097B7C ; text-align: right">
+                            <th>
+                                الهاتف المرسل له
+                            </th>
+                            
+                        </tr>
+
+                        
+                    </tbody></table>
+                    
+                </div>
+                <div class="modal-footer" style="float: contour">
+                    <button name="btn_close" id="btn_close" size="20" class="btn" style="background-color: #097B7C ; color: #CCCCCC">
+                        <span class=" glyphicon glyphicon-check" aria-hidden="true" style="background-color: #097B7C ;"></span> تم التعديل بناءً على طلبي   
+                    </button>
+                </div>  <!-- model footer -->
+            </div>  <!-- model body  -->
+        </div> <!-- model content  -->
+    </div> <!-- model dialog  -->
+</div> <!-- model  -->
+<div class="modal fade" id="ourModal1" data-backdrop="static" data-keyboard="false" dir="rtl">
+    <div class="modal-dialog" style="width:50%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!--                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                <h3 class="modal-title" style="text-align: center; font-weight: bold">سجل تعديل كلمة المرور </h3>
+            </div>
+            <div class="modal-body" style="">
+
+                نود إعلامكم بأنه قد تم التعديل على كلمة المرور الخاصة بحسابكم حسب الجدول أدناه في حال لم يتم التعديل بناءً على طلب منكم يرجى تعديل كلمة المرور و إبلاغ مركز الحاسوب فوراً
+                <div class="table-responsive">
+                    <table id="transTable" dir="rtl" class="table" border="1">
+                        
+                        <tbody><tr style="background-color: #097B7C ; text-align: right">
+                            
+                            <th>
+                                تاريخ التعديل
+                            </th>
+                            <th>
+                                الهاتف المرسل له
+                            </th>
+                            
+                        </tr>
+
+                        
+                    </tbody></table>
+                    
+                </div>
+                <div class="modal-footer" style="float: contour">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" style="background-color: #097B7C ; color: #CCCCCC">إغلاق </button>
+                </div>  <!-- model footer -->
+            </div>  <!-- model body  -->
+        </div> <!-- model content  -->
+    </div> <!-- model dialog  -->
+</div> <!-- model  -->
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    function myFunction2() {
+        var x = document.getElementById("myInput2");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+    $('#btn_close').click(function () {
+        var id = 5555;
+        $.ajax({
+            type: "POST",
+            url: 'readFlagUpd.jsp',
+            data: 'peEmpNo=' + id,
+            success: function (data, textStatus, jqXHR) {
+                var result = JSON.parse(data);
+
+                if (result.code === 0) {
+                    $('#overlay').modal('hide');
+                    $('#modalBody').html(result.msg);
+                    $('#myModal').modal('show', {backdrop: 'static'});
+
+
+                } else
+                {
+                    $('#overlay').modal('hide');
+                    $('#modalBody').html(result.msg);
+                    $('#myModal').modal('show', {backdrop: 'static'});
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("حصل خطأ ");
+            }
+        });
+    });
+    $('#btn_close1').click(function () {
+        $('#myModal').modal('hide', {backdrop: 'static'});
+    });
+
+    $(document).ready(function () {
+    
+    });
+</script>
+<!--   </div>-->
+                
+                    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">الـــبـــريـــد الــــوارد</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="old">
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="https://student.aabu.edu.jo/nreg/ShowAllmsg.jsp" class="btn btn-primary" onclick="javascript:hideAlert();">
+                                        البريد الوارد  
+                                    </a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            
+
+
+ 
+<section class="foot col-lg-12 col-sm-12 col-xs-12 col-md-12"> 
+        <p class="copRight">Copyright © 2017 - AABU Computer Center </p></section>
+   
+        
+        <script src="./بوابة الطالب الإلكترونية_files/bootstrap.min.js.download"></script>
+    
+
+
+
+
+
+
+<div class="modal fade" id="pdfDialog" tabindex="-1" role="dialog" aria-labelledby="pdfDialogLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pdfDialogLabel"> 	إعلان استخدام الشبكة اللاسلكية الموجودة في القاعات التدريسية (AABU-WIFI)</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- PDF Viewer -->
+             
+                <iframe id="pdfViewer" src="./بوابة الطالب الإلكترونية_files/wifi.html" width="100%" height="600px"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        // Open dialog on page load
+          $('#Dialog34').modal('show');
+//        $('#examDialog').modal('show');
+        $('#pdfDialog').modal('show');
+    });
+</script>
+</body></html>
