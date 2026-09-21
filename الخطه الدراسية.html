@@ -1,106 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!-- saved from url=(0046)https://student.aabu.edu.jo/nreg//StdPlan2.jsp -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./الخطه الدراسية_files/bootstrap.css">
-        <link rel="stylesheet" href="./الخطه الدراسية_files/user.css">
-        <title> الخطه الدراسية </title>
-        <meta name="description" content="">
-        <meta name="keywords" content="al, bayt, university, Mafraq, Jordan, Students Portals">
-        <script type="text/javascript" language="javascript" src="./الخطه الدراسية_files/Validate.js.download"></script>
-        <script type="text/javascript" language="javascript" src="./الخطه الدراسية_files/LoginCheck.js.download"></script>
-        <script type="text/javascript" language="javascript" src="./الخطه الدراسية_files/numberonly.js.download"></script>
-        <link rel="stylesheet" type="text/css" href="./الخطه الدراسية_files/floatbox.css">
-        <script type="text/javascript" src="./الخطه الدراسية_files/floatbox.js.download"></script>
-        <!-- New Calender -->
-        <link rel="stylesheet" type="text/css" href="./الخطه الدراسية_files/jscal2.css">
-        <link rel="stylesheet" type="text/css" href="./الخطه الدراسية_files/border-radius.css">
-        <link rel="stylesheet" type="text/css" href="./الخطه الدراسية_files/gold.css">
-        <script type="text/javascript" src="./الخطه الدراسية_files/jscal2.js.download"></script>
-        <script type="text/javascript" src="./الخطه الدراسية_files/ar.js.download"></script>
-        <script type="text/javascript" src="./الخطه الدراسية_files/ajax.js.download"></script>
-        <script type="text/javascript" src="./الخطه الدراسية_files/floating-1.2.js.download"></script>
-        <script src="./الخطه الدراسية_files/jquery-2.1.1.min.js.download" type="text/javascript"></script>
-        <script src="./الخطه الدراسية_files/jquery.validate.min.js.download" type="text/javascript"></script>
-        <script type="text/javascript" language="javascript" src="./الخطه الدراسية_files/validator-pattern.js.download"></script>
-        <script src="./الخطه الدراسية_files/jquery-ui.min.js.download" type="text/javascript"></script>
-        <link href="./الخطه الدراسية_files/uploadfile.css" rel="stylesheet" type="text/css">
-        <script src="./الخطه الدراسية_files/jquery.uploadfile.min.js.download" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                var requestedPage = document.location.href.match(/[^\/]+$/)[0];
-                var ajaxObjects = new Array();
-                var ajaxIndex = ajaxObjects.length;
-                var res;
-                ajaxObjects[ajaxIndex] = new sack();
-                ajaxObjects[ajaxIndex].requestFile = '/nreg/loadstdmsg.jsp';
-                ajaxObjects[ajaxIndex].onCompletion = function () {
-                    res = ajaxObjects[ajaxIndex].response.trim();
-                    var response_date = res.split('^&^');
-                    if (eval(response_date[0]) > 0) {
-                        if (requestedPage === "ShowAllmsg.jsp") {
-                            $("#myModal").modal('hide');
-                        } else {
-                            var d = document.createElement('p');
-                            d.id = "new1";
-                            d.innerHTML = "<img width='10%' src='images/messages/mail__unread__message__envelope-256.png'/>  يـــــوجــــد لـــديـــك " + response_date[0] + "رســــائـــل   ";
-                            var p = document.getElementById('old');
-                            p.appendChild(d);
-                            $("#myModal").modal('show');
-                        }
-                    } else {
-                        $("#myModal").modal('hide');
-                    }
-                };
-                ajaxObjects[ajaxIndex].runAJAX();
-            });
-        </script>
-    <script type="text/javascript" src="./الخطه الدراسية_files/core.js.download"></script><script type="text/javascript" src="./الخطه الدراسية_files/mousedownHandler.js.download"></script><script type="text/javascript" src="./الخطه الدراسية_files/resizeHandler.js.download"></script><script type="text/javascript" src="./الخطه الدراسية_files/animations.js.download"></script><script type="text/javascript" src="./الخطه الدراسية_files/getLeftTop.js.download"></script><script type="text/javascript" src="./الخطه الدراسية_files/zoomInOut.js.download"></script><script type="text/javascript" src="./الخطه الدراسية_files/keydownHandler.js.download"></script></head>
-    <body dir="rtl">
-        <div id="content" class="content container-fluid">
-            
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الخطه الدراسية</title>
+    
+    <!-- روابط CDN المباشرة لضمان عمل التصميم في كل مكان -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="./الخطه الدراسية_files/user.css">
 
+    <style type="text/css">
+        body {
+            font-family: 'Tahoma', Arial, sans-serif;
+            direction: rtl;
+            background-color: #f9f9f9;
+        }
+        .hed {
+            background-color: #ffffff;
+            border-bottom: 3px solid #235A5D;
+            padding: 10px 0;
+            margin-bottom: 15px;
+        }
+        .btn-warning {
+            background-color: #235A5D !important;
+            color: #EA8F15 !important;
+            border: none;
+        }
+        table {
+            background-color: #ffffff;
+            font-size: 13px;
+        }
+        th, td {
+            text-align: center;
+            vertical-align: middle !important;
+            padding: 6px;
+        }
+        .foot {
+            margin-top: 30px;
+            background-color: #235A5D;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .copRight {
+            margin: 0;
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <div id="content" class="content container-fluid">
+        <!-- الترويسة والشعار -->
+        <div id="header" class="hed">
+            <img class="img-responsive" src="./بوابة الطالب الإلكترونية_files/logo.png" alt="شعار الجامعة" style="max-height: 70px;">
+        </div>
 
-   <div id="header" class="hed"><img class="img-responsive" src="./الخطه الدراسية_files/logo.png"></div>
-            <div></div>
-            
+        <!-- شريط معلومات الطالب العلوي -->
+        <div style="font-size: 14px; font-weight: bold; text-align: right; margin-bottom: 15px;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <span>محمد عبدالحميد حابس البطاينه</span>
+            <span class="glyphicon glyphicon-chevron-left" style="color: #235A5D; margin: 0 8px;"></span>
+            <span>كلية الامير الحسين بن عبدالله لتكنولوجيا المعلومات</span>
+            <span style="float: left !important">
+                <a class="btn btn-warning" style="text-decoration: none;" href="index.html">
+                    <strong>تسجيل الخروج <span class="glyphicon glyphicon-log-out"></span></strong>
+                </a>
+            </span>
+        </div>
 
-
-
-
-    <div style="font-size: 14px;font-family: Tahoma;font-weight: bold; text-align: right;margin-bottom:10px" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<!--        <img alt=""  src="/nreg/images/leftarrow.png" align="middle"/>-->
-<img src="data:image/jpg;base64,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" style="display: inline-block;width: 60px;height: 60px;
-                 border-radius: 50%;background-repeat: no-repeat;
-                 background-position: center center;background-size: cover;">
-        <span>محمد عبدالحميد حابس البطاينه</span>
-        <img alt="" src="./الخطه الدراسية_files/leftarrow.png" align="middle">
-        <span>كلية الامير الحسين بن عبدالله لتكنولوجيا المعلومات</span>
-        <span style="float: left !important"><a class="btn btn-warning" style="text-decoration: none;background-color: #235A5D;color: #EA8F15" href="https://student.aabu.edu.jo/nreg/SignOut"><strong>تسجيل الخروج  <span class="glyphicon glyphicon-log-out"></span></strong></a>
-        </span>
-    </div>
-
-            
-
-
- 
-    <!--    <nav class="navbar navbar-default" role="navigation">-->
-    <nav class="navbar navbar-default col-lg-2 col-md-3 col-sm-3 ">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-toggle collapsed" style="text-decoration: none" href="https://student.aabu.edu.jo/nreg/SignOut"><strong>خروج <span class="glyphicon glyphicon-log-out"></span></strong></a>
-            </div>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav">
-                    
-                         <li class="active" role="presentation"><a href="https://student.aabu.edu.jo/nreg/welcome.jsp">الصفحة الرئيسية</a></li>
+        <!-- القائمة الجانبية الموحدة والمربوطة محلياً -->
+        <nav class="navbar navbar-default col-lg-2 col-md-3 col-sm-3">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-toggle collapsed" style="text-decoration: none" href="index.html">
+                        <strong>خروج <span class="glyphicon glyphicon-log-out"></span></strong>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav">
+                       <li class="active" role="presentation"><a href="https://student.aabu.edu.jo/nreg/welcome.jsp">الصفحة الرئيسية</a></li>
                         
                         
                             
@@ -228,1314 +213,326 @@
                             
                         
                     <li role="presentation"><a href="https://student.aabu.edu.jo/nreg/SignOut">تسجيل خروج</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-            
-                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10 ">
-                
-                
-         
-        <table border="1" cellspacing="0" width="80%" align="center" style="margin:auto" dir="rtl">
-            <tbody><tr>
-                <td width="100px" style="background-color:#CC9966"><strong> رقم الطالب : </strong></td>
-                <td colspan="6"><strong> 2550906038 </strong></td>
-            </tr>
-            <tr>
-                <td width="100px" style="background-color:#CC9966"><strong> اسم الطالب : </strong></td>
-                <td colspan="5"><strong> محمد عبدالحميد حابس البطاينه </strong></td>
-            </tr>
-            <tr>
-                <td width="100px" style="background-color:#CC9966"><strong> التخصص : </strong></td>
-                <td colspan="5"><strong>  الأمن السيبراني </strong></td>
-            </tr>
-            <tr>
-                <td width="100px" style="background-color:#CC9966"><strong> الدرجه : </strong></td>
-                <td colspan="5"><strong> بكالوريوس</strong></td>
-            </tr>
-            <tr>
-                <td width="100px" style="background-color:#CC9966"><strong> الفصل الحالي : </strong></td>
-                <td colspan="5"><strong> 2025/3</strong></td>
-            </tr>
-            <tr>
-
-                <td colspan="6"><strong> &nbsp; </strong></td>
-            </tr>
-            <tr>
-                <td colspan="6"><table border="1" cellspacing="0"><tbody><tr>
-                            <td width="50px" style="background-color:#FFFFFF"><strong>&nbsp; </strong></td>
-                            <td colspan="5"><strong> مواد خطة لم تدرس</strong></td>
-
-                            <td width="50px" style="background-color:#8bc34a"><strong>&nbsp; </strong></td>
-                            <td colspan="5"><strong> مواد درسها الطالب بنجاح</strong></td>
-
-                            <td width="50px" style="background-color:#006524"><strong> &nbsp; </strong></td>
-                            <td colspan="5"><strong> مواد مكافئة </strong></td>
-
-                            <td width="50px" style="background-color:#FF0000"><strong> &nbsp; </strong></td>
-                            <td colspan="5"><strong> راسب بالمادة</strong></td>
-                            <td width="50px" style="background-color:#FF62A7"><strong> &nbsp; </strong></td>
-                            <td colspan="5"><strong> غير مكتمل</strong></td>
-
-                            <td width="50px" style="background-color:#ccccff"><strong> &nbsp;  </strong></td>
-                            <td colspan="5"><strong> مسجل على الفصل الحالي</strong></td>
-
-                            <td width="50px" style="background-color:#FF0"><strong> &nbsp; </strong></td>
-                            <td colspan="5"><strong>مواد بديلة</strong></td>
-
-                            <td width="50px" style="background-color:#F6921E"><strong> &nbsp; </strong></td>
-                            <td colspan="5"><strong>مواد تحويل </strong></td>
-
-                            <td width="50px" style="background-color:#CCC"><strong> &nbsp; </strong></td>
-                            <td colspan="5"><strong>مواد موافقات </strong></td>
-                            <td width="50px" style="background-color:#3895D3"><strong> &nbsp; </strong></td>
-                            <td colspan="5"><strong>  منسحب </strong></td>
-                            <td width="50px" style="background-color:#6600CC"><strong> &nbsp; </strong></td>
-                            <td colspan="5"><strong> مواد الحزم </strong></td>
-                        </tr>
-                    </tbody></table></td>
-            </tr>
-            <tr>
-
-                <td colspan="7"><strong> &nbsp; </strong></td>
-            </tr>
-
-            
-
-            <tr style="background-color:#CC9966">
-                <td>اسم المجموعه</td>
-                <td>متطلبات الجامعة الاجبارية  </td>
-                <td>عدد الساعات المطلوبه           </td>
-                <td>18</td>
-                <td>مجموع الساعات التي درسها الطالب</td>
-                <td>3</td>
-                <td> </td>
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-
-                <td>العلامة </td>
-                <td>المتطلب السابق</td>
-                <td>ملاحظات</td>
-
-            </tr>
-
-                        <tr>
-                <td style="background-color:#FFFFFF">5001100</td>
-                <td style="background-color:#FFFFFF">الثقافة الاسلامية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001101</td>
-                <td style="background-color:#FFFFFF">النظم الاسلامية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001110</td>
-                <td style="background-color:#FFFFFF">العلوم العسكرية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001111</td>
-                <td style="background-color:#FFFFFF">التربية الوطنية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">&nbsp;</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td></td>
-                <td> مسجل على الفصل التالي </td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001120</td>
-                <td style="background-color:#FFFFFF">اللغة العربية(1)</td>
-                <td>3</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">ج-</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001121</td>
-                <td style="background-color:#FFFFFF">اللغةالانجليزية(1)</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001128</td>
-                <td style="background-color:#FFFFFF">خدمة المجتمع</td>
-                <td>0</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-            
-
-            <tr style="background-color:#CC9966">
-                <td>اسم المجموعه</td>
-                <td>متطلبات الجامعة الاختيارية-مجال العلوم الإنسانية  </td>
-                <td>عدد الساعات المطلوبه           </td>
-                <td>3</td>
-                <td>مجموع الساعات التي درسها الطالب</td>
-                <td>3</td>
-                <td> </td>
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-
-                <td>العلامة </td>
-                <td>المتطلب السابق</td>
-                <td>ملاحظات</td>
-
-            </tr>
-
-                        <tr>
-                <td style="background-color:#FFFFFF">5001122</td>
-                <td style="background-color:#FFFFFF">اللغة الالمانية(1)</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001123</td>
-                <td style="background-color:#FFFFFF">اللغة الفارسية(1)</td>
-                <td>3</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">أ</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001124</td>
-                <td style="background-color:#FFFFFF">اللغة التركية(1)</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001125</td>
-                <td style="background-color:#FFFFFF">تاريخ القدس</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001126</td>
-                <td style="background-color:#FFFFFF">تاريخ الحضارة الاسلامية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001127</td>
-                <td style="background-color:#FFFFFF">اللغة الفرنسية(1)</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001180</td>
-                <td style="background-color:#FFFFFF">مدخل إلى التربية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001189</td>
-                <td style="background-color:#FFFFFF">الإعاقة و المجتمع</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-            
-
-            <tr style="background-color:#CC9966">
-                <td>اسم المجموعه</td>
-                <td>متطلبات الجامعة الاختيارية-مجال العلوم الاجتماعية والاقتصادي  </td>
-                <td>عدد الساعات المطلوبه           </td>
-                <td>3</td>
-                <td>مجموع الساعات التي درسها الطالب</td>
-                <td>0</td>
-                <td> </td>
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-
-                <td>العلامة </td>
-                <td>المتطلب السابق</td>
-                <td>ملاحظات</td>
-
-            </tr>
-
-                        <tr>
-                <td style="background-color:#FFFFFF">5001112</td>
-                <td style="background-color:#FFFFFF">القانون في حياتنا</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001113</td>
-                <td style="background-color:#FFFFFF">الديمقراطية و حقوق الانسان</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001140</td>
-                <td style="background-color:#FFFFFF">منهجية البحث العلمي</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td> </td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001141</td>
-                <td style="background-color:#FFFFFF">اخلاقيات المهنة</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001142</td>
-                <td style="background-color:#FFFFFF">الريادة و الابتكار</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001181</td>
-                <td style="background-color:#FFFFFF">مدخل إلى علم النفس التربوي</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001182</td>
-                <td style="background-color:#FFFFFF">تنظيم الأسرة والمجتمع</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5001183</td>
-                <td style="background-color:#FFFFFF">المهارات الحياتية الجامعية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-            
-
-            <tr style="background-color:#CC9966">
-                <td>اسم المجموعه</td>
-                <td>متطلبات الجامعة الاختيارية-مجال العلوم والتكنولوجيا والصحة  </td>
-                <td>عدد الساعات المطلوبه           </td>
-                <td>3</td>
-                <td>مجموع الساعات التي درسها الطالب</td>
-                <td>0</td>
-                <td> </td>
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-
-                <td>العلامة </td>
-                <td>المتطلب السابق</td>
-                <td>ملاحظات</td>
-
-            </tr>
-
-                        <tr>
-                <td style="background-color:#FFFFFF">5002104</td>
-                <td style="background-color:#FFFFFF">الاعجاز العلمي في القران الكريم</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002130</td>
-                <td style="background-color:#FFFFFF">الفيزياء في حياتنا</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002131</td>
-                <td style="background-color:#FFFFFF">بيولوجيا الانسان</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002132</td>
-                <td style="background-color:#FFFFFF">البيئة والتلوث البيئي</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002133</td>
-                <td style="background-color:#FFFFFF">مدخل إلى علم الفلك</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002150</td>
-                <td style="background-color:#FFFFFF">السلامة المرورية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002170</td>
-                <td style="background-color:#FFFFFF">الثقافة الصحية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002182</td>
-                <td style="background-color:#FFFFFF">التربية الإعلامية والمعلوماتية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-            
-
-            <tr style="background-color:#CC9966">
-                <td>اسم المجموعه</td>
-                <td>متطلبات الكلية الاجبارية  </td>
-                <td>عدد الساعات المطلوبه           </td>
-                <td>21</td>
-                <td>مجموع الساعات التي درسها الطالب</td>
-                <td>15</td>
-                <td> </td>
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-
-                <td>العلامة </td>
-                <td>المتطلب السابق</td>
-                <td>ملاحظات</td>
-
-            </tr>
-
-                        <tr>
-                <td style="background-color:#FFFFFF">5002161</td>
-                <td style="background-color:#FFFFFF">حاسوب(2)لطلبة كلية تكنولوجيا المعلومات</td>
-                <td>3</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">ج</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002162</td>
-                <td style="background-color:#FFFFFF">مختبر حاسوب(2)لطلبة كلية تكنولوجيا المعلومات</td>
-                <td>1</td>
-                <td style="background-color:#006524">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">ب+</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>901110 او متزامن او 5002161 او متزامن</td>
-                <td>تم التسجيل برقم مكافئ901111</td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002262</td>
-                <td style="background-color:#FFFFFF">مبادىء نظم المعلومات</td>
-                <td>3</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">د</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002263</td>
-                <td style="background-color:#FFFFFF">البرمجة الكينونية</td>
-                <td>3</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">ج+</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>901131 او 901110 او 5002161</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002264</td>
-                <td style="background-color:#FFFFFF">مختبر البرمجة الكينونية</td>
-                <td>1</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">ب-</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>901210 او متزامن او 5002263 او متزامن</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#ccccff">5002360</td>
-                <td style="background-color:#FFFFFF">تصميم الصفحات الالكترونية</td>
-                <td>3</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">د</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>901210 او 5002263</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#ccccff">5002361</td>
-                <td style="background-color:#FFFFFF">مختبر تصميم الصفحات الالكترونية</td>
-                <td>1</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">ج</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>902350 او متزامن او 5002360 او متزامن</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002362</td>
-                <td style="background-color:#FFFFFF">تحليل وتصميم الأنظمة</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>904233 او 5002262</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002460</td>
-                <td style="background-color:#FFFFFF">التجارة الالكترونية والحكومة الالكترونية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">&nbsp;</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>902350 او 5002360</td>
-                <td> مسجل على الفصل التالي </td>
-
-            </tr>  
-            
-
-            <tr style="background-color:#CC9966">
-                <td>اسم المجموعه</td>
-                <td>متطلبات القسم الإجبارية  </td>
-                <td>عدد الساعات المطلوبه           </td>
-                <td>72</td>
-                <td>مجموع الساعات التي درسها الطالب</td>
-                <td>3</td>
-                <td> </td>
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-
-                <td>العلامة </td>
-                <td>المتطلب السابق</td>
-                <td>ملاحظات</td>
-
-            </tr>
-
-                        <tr>
-                <td style="background-color:#FFFFFF">401233</td>
-                <td style="background-color:#FFFFFF">طرق الاحصاء</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>401101 او 5002197</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901200</td>
-                <td style="background-color:#FFFFFF">الرياضيات المتقطعة</td>
-                <td>3</td>
-                <td style="background-color:#8bc34a">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">ج</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901212</td>
-                <td style="background-color:#FFFFFF">البرمجة بلغة بايثون</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901210 او 5002263</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#ccccff">901220</td>
-                <td style="background-color:#FFFFFF">تصميم منطق الحاسوب</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">هـ</td>
-                            
-                            <td style="width: 50px">&nbsp;</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>901200</td>
-                <td> مسجل على الفصل التالي </td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901240</td>
-                <td style="background-color:#FFFFFF">تراكيب البيانات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">&nbsp;</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>901210 او 5002263</td>
-                <td> مسجل على الفصل التالي </td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901320</td>
-                <td style="background-color:#FFFFFF">عمارة الحاسوب</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901220</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901325</td>
-                <td style="background-color:#FFFFFF">شبكات الحاسوب</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901220</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901330</td>
-                <td style="background-color:#FFFFFF">قواعد البيانات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901240</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901332</td>
-                <td style="background-color:#FFFFFF">نظم التشغيل</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901320</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901340</td>
-                <td style="background-color:#FFFFFF">تحليل وتصميم الخوارزميات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901240</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906201</td>
-                <td style="background-color:#FFFFFF">أساسيات امن الانظمة والمعلومات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>904233 او 5002262</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906202</td>
-                <td style="background-color:#FFFFFF">نظرية التشفير</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">&nbsp;</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td>401101 او 5002197</td>
-                <td> مسجل على الفصل التالي </td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906311</td>
-                <td style="background-color:#FFFFFF">أمن نظم التشغيل</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901332</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906312</td>
-                <td style="background-color:#FFFFFF">مختبر أمن نظم التشغيل</td>
-                <td>1</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>906311 او متزامن</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906313</td>
-                <td style="background-color:#FFFFFF">أمن المعلومات وقواعد البيانات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901330</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906314</td>
-                <td style="background-color:#FFFFFF">مختبر أمن المعلومات وقواعد البيانات</td>
-                <td>1</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>906313 او متزامن</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906401</td>
-                <td style="background-color:#FFFFFF">التصميم والبناءالآمن للبرمجيات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>904341 او 5002362</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906411</td>
-                <td style="background-color:#FFFFFF">أمن الشبكات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901325</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906412</td>
-                <td style="background-color:#FFFFFF">مختبر أمن الشبكات</td>
-                <td>1</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>906411 او متزامن</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906413</td>
-                <td style="background-color:#FFFFFF">بروتوكولات أمن الانظمة المعلومات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>906411</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906414</td>
-                <td style="background-color:#FFFFFF">مراقبة وتوثيق الشبكات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>906413</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906421</td>
-                <td style="background-color:#FFFFFF">الأدلة الجنائية الحاسوبية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>906201</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906425</td>
-                <td style="background-color:#FFFFFF">التجارة الإلكترونية الآمنة</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>902450 او 5002460</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906490</td>
-                <td style="background-color:#FFFFFF">تدريب ميداني</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>اتمام 90 ساعة معتمدة</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906499</td>
-                <td style="background-color:#FFFFFF">مشروع تخرج</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>اتمام 90 ساعة معتمدة</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">5002197</td>
-                <td style="background-color:#FFFFFF">تفاضل وتكامل (1)</td>
-                <td>3</td>
-                <td style="background-color:#FF0000">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            
-                            <td style="width: 50px">هـ</td>
-                            </tr>
-                    </tbody></table>
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-            
-
-            <tr style="background-color:#CC9966">
-                <td>اسم المجموعه</td>
-                <td>متطلبات القسم الاختيارية  </td>
-                <td>عدد الساعات المطلوبه           </td>
-                <td>12</td>
-                <td>مجموع الساعات التي درسها الطالب</td>
-                <td>0</td>
-                <td> </td>
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-
-                <td>العلامة </td>
-                <td>المتطلب السابق</td>
-                <td>ملاحظات</td>
-
-            </tr>
-
-                        <tr>
-                <td style="background-color:#FFFFFF">201288</td>
-                <td style="background-color:#FFFFFF">الجرائم الإلكترونية لطلبة تكنولوجيا المعلومات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">201289</td>
-                <td style="background-color:#FFFFFF">التحقيقات الجنائية في الجرائم الإلكترونية لطلبة تكنولوجياالمعلومات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td></td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901411</td>
-                <td style="background-color:#FFFFFF">ادوات برمجة متقدمة</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901240</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901420</td>
-                <td style="background-color:#FFFFFF">ربط الشبكات وتطبيقاته</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>902221 او 901325</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">901430</td>
-                <td style="background-color:#FFFFFF">اسس النظم الموزعة والمتوازية</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901332</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">904380</td>
-                <td style="background-color:#FFFFFF">قضايا اخلاقيه وقانونية ومهنية في الحوسبة</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>اتمام 90 ساعة معتمدة</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906330</td>
-                <td style="background-color:#FFFFFF">سياسات أمن المعلومات وإدارتها</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>906201</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906415</td>
-                <td style="background-color:#FFFFFF">لغات الجيل الرابع وأمنها</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901330</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906424</td>
-                <td style="background-color:#FFFFFF">الحوسبة السحابية وأمنها</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>901325</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906431</td>
-                <td style="background-color:#FFFFFF">تدقيق أمن نظم المعلومات</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>906201</td>
-                <td></td>
-
-            </tr>  
-                        <tr>
-                <td style="background-color:#FFFFFF">906480</td>
-                <td style="background-color:#FFFFFF">موضوعات خاصة في أمن الأنظمة والمعلومات </td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    </td>
-                <td>موافقة القسم</td>
-                <td></td>
-
-            </tr>  
-            
-            <tr style="background-color:#CC9966">
-                <td colspan="7">مواد خارج الخطه  </td>
-
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-                <td>العلامة </td>
-                <td>المتطلب السابق</td>
-                <td>ملاحظات</td>
-
-            </tr>    
-
-            
-            <tr>
-                <td style="background-color:null">90122000</td>
-                <td>مختبر تصميم منطق الحاسوب</td>
-                <td>0</td>
-
-                <td style="background-color:null">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            <td style="width: 50px">&nbsp;</td>
-
-                            </tr>
-                    </tbody></table>
-                    </td>
-
-                <td>null</td>
-                <td></td>
-                
-            </tr><tr>
-                <td style="background-color:null">500246000</td>
-                <td>مختبر التجارة الالكترونية والحكومة الالكترونية/0 ساعة</td>
-                <td>0</td>
-
-                <td style="background-color:null">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            <td style="width: 50px">&nbsp;</td>
-
-                            </tr>
-                    </tbody></table>
-                    </td>
-
-                <td>null</td>
-                <td></td>
-                
-            </tr><tr>
-                <td style="background-color:null">90124000</td>
-                <td>مختبر تراكيب البيانات</td>
-                <td>0</td>
-
-                <td style="background-color:null">
-                    
-                    <table border="1" cellspacing="0">
-                        <tbody><tr>
-                            <td style="width: 50px">&nbsp;</td>
-
-                            </tr>
-                    </tbody></table>
-                    </td>
-
-                <td>null</td>
-                <td></td>
-                
-            </tr>  
-
-            
-            <tr style="background-color:#CC9966">
-                <td colspan="7">موادالاستدراكي  </td>
-
-            </tr>
-            <tr style="background-color:#CC9966">
-                <td>رقم  المادة</td>
-                <td>اسم المادة</td>
-                <td>الساعات المعتمده </td>
-                <td>العلامة </td>
-
-                <td>المتطلب السابق</td>
-                <td colspan="2">ملاحظات</td>
-
-            </tr>    
-
-            
-            <tr>
-                <td>5001021</td>
-                <td>اللغة الانجليزية 99</td>
-                <td>3</td>
-                <td style="background-color:#FFFFFF">
-                    <table border="1" cellspacing="0"><tbody><tr>
-                            <td>ناجح</td>
-                            </tr></tbody></table></td>
-
-                <td></td>
-                <td colspan="2"></td>
-
-            </tr>  
-
-            
-        </tbody></table>
-
-        
-        <p></p>
-
-        <table border="1" cellspacing="0" width="46%" align="center" style="margin:auto" dir="rtl">
-            <tbody><tr><td colspan="3" style="background-color:#CC9966"><strong> نتيجة امتحانات المستوى </strong></td>
-
-            </tr>    
-            
-
-            <tr>
-                <td><strong>5001020</strong></td>
-                <td><strong>اللغة العربية 99</strong></td>
-                <td><table border="1" cellspacing="0"><tbody><tr>
-
-                            <td style="background-color: #FFFFFF">ناجح</td> 
-                            </tr></tbody></table></td>
-            </tr>
-            
-
-            <tr>
-                <td><strong>5001021</strong></td>
-                <td><strong>اللغة الانجليزية 99</strong></td>
-                <td><table border="1" cellspacing="0"><tbody><tr>
-
-                            <td style="background-color: #FFFFFF">راسب</td> 
-                            </tr></tbody></table></td>
-            </tr>
-            
-
-            <tr>
-                <td><strong>5002060</strong></td>
-                <td><strong>حاسوب 99</strong></td>
-                <td><table border="1" cellspacing="0"><tbody><tr>
-
-                            <td style="background-color: #FFFFFF">ناجح</td> 
-                            </tr></tbody></table></td>
-            </tr>
-            
-
-            </tbody></table><table border="1" cellspacing="0" width="46%" align="center" style="margin:auto" dir="rtl">
-                <tbody><tr><td height="25" colspan="2" style="background-color:#CC9966">  </td>
-                </tr><tr> <td width="63%"><strong>  المجموع التراكمي للساعات المسجله  </strong></td><td>33</td></tr>
-                <tr> <td><strong>  المجموع التراكمي للساعات التي نجح بها  </strong></td><td>27</td></tr>
-                <tr> <td><strong> المجموع التراكمي للساعات الداخله في حساب المعدل التراكمي </strong></td><td>30</td></tr>
-                <tr> <td><strong>   المجموع التراكمي للساعات التي نجح بها بعد حذف المعاد منها </strong></td><td>24</td></tr>
-
-                
-                <tr> <td><strong> المعدل التراكمي </strong></td><td>2.0</td></tr>
-                
-                <tr> <td><strong>التقدير  </strong></td><td>مقبول</td></tr>
-            </tbody></table>
-
-
-            
-        
-                
-                    <div class="modal" tabindex="-1" role="dialog" id="myModal">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">الـــبـــريـــد الــــوارد</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body" id="old">
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="https://student.aabu.edu.jo/nreg/ShowAllmsg.jsp" class="btn btn-primary" onclick="javascript:hideAlert();">
-                                        البريد الوارد  
-                                    </a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </ul>
                 </div>
-            
-            
+            </div>
+        </nav>
 
+        <!-- المحتوى الداخلي للخطة الدراسية -->
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10">
+            <div class="table-responsive">
+                <table border="1" cellspacing="0" width="100%" class="table table-bordered" dir="rtl">
+                    <tbody>
+                        <tr>
+                            <td width="150px" style="background-color:#CC9966"><strong> رقم الطالب : </strong></td>
+                            <td colspan="6"><strong> 2550906038 </strong></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color:#CC9966"><strong> اسم الطالب : </strong></td>
+                            <td colspan="5"><strong> محمد عبدالحميد حابس البطاينه </strong></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color:#CC9966"><strong> التخصص : </strong></td>
+                            <td colspan="5"><strong> الأمن السيبراني </strong></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color:#CC9966"><strong> الدرجه : </strong></td>
+                            <td colspan="5"><strong> بكالوريوس</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="background-color:#CC9966"><strong> الفصل الحالي : </strong></td>
+                            <td colspan="5"><strong> 2025/3</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <table border="1" cellspacing="0" class="table table-condensed">
+                                    <tbody>
+                                        <tr>
+                                            <td width="30px" style="background-color:#FFFFFF">&nbsp;</td>
+                                            <td>مواد خطة لم تدرس</td>
+                                            <td width="30px" style="background-color:#8bc34a">&nbsp;</td>
+                                            <td>مواد درسها الطالب بنجاح</td>
+                                            <td width="30px" style="background-color:#006524">&nbsp;</td>
+                                            <td>مواد مكافئة</td>
+                                            <td width="30px" style="background-color:#FF0000">&nbsp;</td>
+                                            <td>راسب بالمادة</td>
+                                            <td width="30px" style="background-color:#ccccff">&nbsp;</td>
+                                            <td>مسجل على الفصل الحالي</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
 
- 
-<section class="foot col-lg-12 col-sm-12 col-xs-12 col-md-12"> 
-        <p class="copRight">Copyright © 2017 - AABU Computer Center </p></section>
-   
+                        <!-- متطلبات الجامعة الإجبارية -->
+                        <tr style="background-color:#CC9966">
+                            <td>اسم المجموعه</td>
+                            <td>متطلبات الجامعة الاجبارية</td>
+                            <td>عدد الساعات المطلوبه</td>
+                            <td>18</td>
+                            <td>مجموع الساعات التي درسها الطالب</td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr style="background-color:#E8D8C8">
+                            <td>رقم المادة</td>
+                            <td>اسم المادة</td>
+                            <td>الساعات المعتمده</td>
+                            <td>العلامة</td>
+                            <td>المتطلب السابق</td>
+                            <td>ملاحظات</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5001100</td>
+                            <td>الثقافة الاسلامية</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5001101</td>
+                            <td>النظم الاسلامية</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5001110</td>
+                            <td>العلوم العسكرية</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5001111</td>
+                            <td>التربية الوطنية</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td>مسجل على الفصل التالي</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5001120</td>
+                            <td>اللغة العربية(1)</td>
+                            <td>3</td>
+                            <td style="background-color:#8bc34a">ج-</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5001121</td>
+                            <td>اللغةالانجليزية(1)</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5001128</td>
+                            <td>خدمة المجتمع</td>
+                            <td>0</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <!-- متطلبات الكلية الإجبارية -->
+                        <tr style="background-color:#CC9966">
+                            <td>اسم المجموعه</td>
+                            <td>متطلبات الكلية الاجبارية</td>
+                            <td>عدد الساعات المطلوبه</td>
+                            <td>21</td>
+                            <td>مجموع الساعات التي درسها الطالب</td>
+                            <td>15</td>
+                            <td></td>
+                        </tr>
+                        <tr style="background-color:#E8D8C8">
+                            <td>رقم المادة</td>
+                            <td>اسم المادة</td>
+                            <td>الساعات المعتمده</td>
+                            <td>العلامة</td>
+                            <td>المتطلب السابق</td>
+                            <td>ملاحظات</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002161</td>
+                            <td>حاسوب(2)لطلبة كلية تكنولوجيا المعلومات</td>
+                            <td>3</td>
+                            <td style="background-color:#8bc34a">ج</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002162</td>
+                            <td>مختبر حاسوب(2)لطلبة كلية تكنولوجيا المعلومات</td>
+                            <td>1</td>
+                            <td style="background-color:#006524; color:#fff">ب+</td>
+                            <td>901110 او 5002161</td>
+                            <td>تم التسجيل برقم مكافئ 901111</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002262</td>
+                            <td>مبادىء نظم المعلومات</td>
+                            <td>3</td>
+                            <td style="background-color:#8bc34a">د</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002263</td>
+                            <td>البرمجة الكينونية</td>
+                            <td>3</td>
+                            <td style="background-color:#8bc34a">ج+</td>
+                            <td>5002161</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002264</td>
+                            <td>مختبر البرمجة الكينونية</td>
+                            <td>1</td>
+                            <td style="background-color:#8bc34a">ب-</td>
+                            <td>5002263</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002360</td>
+                            <td>تصميم الصفحات الالكترونية</td>
+                            <td>3</td>
+                            <td style="background-color:#8bc34a">د</td>
+                            <td>5002263</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002361</td>
+                            <td>مختبر تصميم الصفحات الالكترونية</td>
+                            <td>1</td>
+                            <td style="background-color:#8bc34a">ج</td>
+                            <td>5002360</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002362</td>
+                            <td>تحليل وتصميم الأنظمة</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>5002262</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002460</td>
+                            <td>التجارة الالكترونية والحكومة الالكترونية</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>5002360</td>
+                            <td>مسجل على الفصل التالي</td>
+                            <td></td>
+                        </tr>
+
+                        <!-- متطلبات القسم الإجبارية -->
+                        <tr style="background-color:#CC9966">
+                            <td>اسم المجموعه</td>
+                            <td>متطلبات القسم الإجبارية</td>
+                            <td>عدد الساعات المطلوبه</td>
+                            <td>72</td>
+                            <td>مجموع الساعات التي درسها الطالب</td>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr style="background-color:#E8D8C8">
+                            <td>رقم المادة</td>
+                            <td>اسم المادة</td>
+                            <td>الساعات المعتمده</td>
+                            <td>العلامة</td>
+                            <td>المتطلب السابق</td>
+                            <td>ملاحظات</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>901200</td>
+                            <td>الرياضيات المتقطعة</td>
+                            <td>3</td>
+                            <td style="background-color:#8bc34a">ج</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>901220</td>
+                            <td>تصميم منطق الحاسوب</td>
+                            <td>3</td>
+                            <td style="background-color:#FF0000; color:#fff">هـ</td>
+                            <td>901200</td>
+                            <td>مسجل على الفصل التالي</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>901240</td>
+                            <td>تراكيب البيانات</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>5002263</td>
+                            <td>مسجل على الفصل التالي</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>906202</td>
+                            <td>نظرية التشفير</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>5002197</td>
+                            <td>مسجل على الفصل التالي</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5002197</td>
+                            <td>تفاضل وتكامل (1)</td>
+                            <td>3</td>
+                            <td style="background-color:#FF0000; color:#fff">هـ</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- جدول ملخص الساعات والمعدل -->
+            <table border="1" cellspacing="0" width="50%" class="table table-bordered" align="center" style="margin: 20px auto;" dir="rtl">
+                <tbody>
+                    <tr><td colspan="2" style="background-color:#CC9966"><strong>الخلاصة التراكمية</strong></td></tr>
+                    <tr><td><strong>المجموع التراكمي للساعات المسجله</strong></td><td>33</td></tr>
+                    <tr><td><strong>المجموع التراكمي للساعات التي نجح بها</strong></td><td>27</td></tr>
+                    <tr><td><strong>المجموع التراكمي للساعات بعد حذف المعاد</strong></td><td>24</td></tr>
+                    <tr><td><strong>المعدل التراكمي</strong></td><td>2.0</td></tr>
+                    <tr><td><strong>التقدير</strong></td><td>مقبول</td></tr>
+                </tbody>
+            </table>
         </div>
-        <script src="./الخطه الدراسية_files/bootstrap.min.js.download"></script>
-    
 
- %&gt;</body></html>
+        <!-- تذييل الصفحة -->
+        <section class="foot col-lg-12 col-sm-12 col-xs-12 col-md-12"> 
+            <p class="copRight">Copyright © 2017 - AABU Computer Center</p>
+        </section>
+    </div>
+</body>
+</html>
