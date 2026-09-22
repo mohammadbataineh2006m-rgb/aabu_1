@@ -1,0 +1,279 @@
+@media (max-width: 568px) {
+    body{font-size: 10px;}
+ 
+}
+
+@media (max-width: 768px) {
+    body{font-size: 14px;}
+}
+
+@media screen and (max-width: 768px) and (min-width: 576px){
+    .regbtn {
+        font-size:20px;
+    }
+}
+ 
+@media screen and (max-width: 576px) {
+    .regbtn {
+        font-size:14px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .regbtn {
+        font-size:24px;
+    }
+}
+   @media screen and (min-width: 993px){
+    .regbtn {
+        font-size:28px;
+    }
+     
+}
+body{
+    background-color:#dadada;
+    font-size: 14px;
+    font-family:Tahoma, Geneva, sans-serif; 
+    direction: rtl;
+}
+p {
+    margin: 0;
+}
+
+
+.statIco{
+    min-height:270px;
+    float:right;
+    position:relative;
+}
+
+.lock{
+    margin-top:20px;
+    margin-right:50px;
+    float:right;
+    position:relative;
+}
+
+.fRight{
+    float:right;
+    position:relative;
+    margin-right:10px;
+}
+
+.btnTxt{
+    font-weight:bold;
+    margin-right:85px;
+}
+
+.remTxt{
+    color:#ea8f15;
+    margin-top:5px;
+    font-size:16px;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+
+.rowTxt{
+    margin-top:15px;
+}
+
+.labTxt{
+    color:#FFFFFF;
+    font-size:16px;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+
+.txtLog{
+    margin-top:8px;
+    margin-right:5px;
+    color:#FFFFFF;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.loginBox1{
+  background-color: #1f3436;      
+  margin: 20px auto;              
+  padding: 20px;                 
+  border-radius: 12px;           
+  direction: rtl;              
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);  
+  max-width: 420px;              
+  width: 100%;                   
+  color: #fff;                   
+}
+.loginBox label{
+    color: #f75b5b;
+    padding-right: 3px;
+}
+.loginBox a{
+    color:#ea8f15;
+    margin-top:5px;
+    font-size:16px;
+    font-family:Tahoma, Geneva, sans-serif;
+}
+.login{
+    position:relative;
+    float:right;
+    min-height:300px;
+    height:auto;
+}
+
+.leftPart{
+    direction:rtl;
+    margin-top:15px;
+    text-align:right;
+}
+
+.txtR{
+    color:#ea8f15 !important;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:18px;
+    text-align:right;
+}
+.txtR a {
+    color:#ea8f15 !important;
+}
+.hed{
+    background-image:url("/nreg/assets/img/hedrbg_02.png");
+    height:110px;
+    background-repeat:repeat-x;
+    direction:rtl;
+    padding-right:15px;
+}
+.foot{
+     background-image:url("/nreg/assets/img/footbg_02.png");
+    display:inline-block;
+    position:relative;
+    float:right;
+    padding: 0px;
+    height: 65px;
+    margin-top: 20px;
+    padding-top: 25px;
+    
+}
+
+.announ{
+    display:inline-block;
+    direction:rtl;
+    float:right;
+    position:relative;
+}
+
+.announTxt{
+    background-color:#ea8f15;
+    color:white;
+    border-radius:25px 25px 0px 0px;
+    width:150px;
+    text-align:center;
+    height:40px;
+    margin-top:5px;
+    padding-top:5px;
+}
+
+.announList{
+    display:inline-block;
+    position:relative;
+    float:right;
+    padding: 0px;
+}
+
+.errMsg{
+    display:inline-block;
+    position:relative;
+    float:right;
+    color:red;
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    direction:rtl;
+}
+
+.cop{
+    float:right;
+    text-align:center;
+    display:inline-block;
+    position:relative;
+}
+
+.copRight{
+    text-align:center;
+    font-size:14px;
+    font-weight:bold;
+    font-family:Tahoma, Geneva, sans-serif;
+    color:#ccffff;
+}
+
+.announLstCont{
+    background-color:#f9e7c8;
+    box-shadow:5px 5px 10px 1px #888888;
+    text-align:right;
+    padding-right:10px;
+    color:#ea8f15;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:16px;
+}
+.announLstCont a{
+    color:#d17700;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:16px;
+
+}
+.content{
+    background-color:white;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    height:auto;
+    margin-top:0px;
+}
+
+@media (min-width:768px) {
+  .navbar-header{
+    float:right;
+  }
+}
+
+.navbar-brand{
+  height:50px;
+  padding:15px 15px;
+  font-size:20px;
+  line-height:20px;
+  text-align:right;
+  direction:rtl;
+  float:right;
+}
+.titText{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    
+}
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header{
+  margin-right:5px;
+  margin-left:1px;
+  direction:rtl;
+  text-align:right;
+  padding:0px;
+}
+
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header{
+  margin-right:-15px;
+  margin-left:15px;
+  direction:ltr;
+  text-align:right;
+  padding:0px;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary{
+  display:inline-block;
+  float:right;
+}
+
+@media (min-width:768px) {
+  .navbar-nav > li{
+    border-bottom: 1px solid #808080;
+     line-height: 10px;
+      float:none;
+    font-size:14px;
+  }
+}
